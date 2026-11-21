@@ -1,0 +1,76 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Attendance Management System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- Header -->
+    <header class="header">
+      <div>
+        <p class="subtitle">Attendance Tracker</p>
+        <h1>Student Attendance</h1>
+      </div>
+      <div class="date-box">
+        <label for="dateInput">Date</label>
+        <input type="date" id="dateInput" />
+      </div>
+    </header>
+
+    <!-- Summary cards -->
+    <section class="summary">
+      <div class="card card-main">
+        <p>Average Attendance</p>
+        <h2 id="avgAttendance">0%</h2>
+        <div class="bar"><span id="avgBar"></span></div>
+      </div>
+      <div class="card">
+        <p>Total Students</p>
+        <h2 id="totalStudents">0</h2>
+      </div>
+      <div class="card">
+        <p>Present Today</p>
+        <h2 id="presentToday" class="green">0</h2>
+      </div>
+      <div class="card">
+        <p>Absent Today</p>
+        <h2 id="absentToday" class="red">0</h2>
+      </div>
+    </section>
+
+    <!-- Add student -->
+    <section class="add-box">
+      <form id="addForm">
+        <input type="text" id="nameInput" placeholder="Enter student name" maxlength="40" autocomplete="off" />
+        <button type="submit" class="btn btn-primary">+ Add Student</button>
+      </form>
+      <p id="errorMsg" class="error"></p>
+    </section>
+
+    <!-- Student list -->
+    <section class="list-box">
+      <div class="list-head">
+        <h3>Students</h3>
+        <input type="text" id="searchInput" placeholder="Search..." />
+      </div>
+
+      <div id="studentList"></div>
+
+      <p id="emptyMsg" class="empty">No students yet. Add your first student above.</p>
+
+      <div class="footer-actions">
+        <button id="markAllPresent" class="btn btn-light">Mark all present</button>
+        <button id="clearAll" class="btn btn-danger">Clear all data</button>
+      </div>
+    </section>
+
+    <footer class="footer">Data is saved in your browser (localStorage)</footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
